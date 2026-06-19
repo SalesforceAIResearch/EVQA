@@ -1,0 +1,50 @@
+General MLLMs:
+
+    STEP 1:
+        gemini:
+        python gemini_st_evidence.py --model gemini-2.5-flash --mode single-turn
+        python gemini_st_evidence.py --model gemini-2.5-pro --mode single-turn
+
+        gpt:
+        python gpt_st_evidence.py --model o3 --mode single-turn --fps 1
+
+        internvl:
+        CUDA_VISIBLE_DEVICES=0 python internvl_3_5.py --mode single-turn
+
+        llava_ov_1.5:
+        CUDA_VISIBLE_DEVICES=0 python llava_ov1_5_st_evidence.py --mode single-turn --max-size 512
+
+        qwen2.5vl:
+        CUDA_VISIBLE_DEVICES=0 python qwen2_5vl_st_evidence.py --model Qwen/Qwen2.5-VL-7B-Instruct --fps 1 --mode single-turn
+        CUDA_VISIBLE_DEVICES=0,1,2,3 python qwen2_5vl_st_evidence.py --model Qwen/Qwen2.5-VL-72B-Instruct --fps 1 --gpu-num 4
+
+        qwen3vl:
+        CUDA_VISIBLE_DEVICES=0 python qwen3vl_st_evidence.py --model Qwen/Qwen3-VL-4B-Instruct --fps 1 --batch-size 8 --gpu-num 1 --mode single-turn
+
+
+        videollama3:
+        CUDA_VISIBLE_DEVICES=2 python videollama3_st_evidence.py --model DAMO-NLP-SG/VideoLLaMA3-3B --mode single-turn --fps 1 --max-frames 128
+
+
+    STEP 2:
+    python unipixel_video_seg.py results/qwen3vl/qwen3_vl_235b_a22b_instruct_st_evidence_ref_exp_1fps.json --save_masks --skip_viz --mode seperate --batch_size 5 --every_n_frames 6
+
+
+Grounded MLLMs:
+
+SA2VA:
+    CUDA_VISIBLE_DEVICES=0 python sa2va_st_evidence.py --device cuda
+
+UniPixel:
+    CUDA_VISIBLE_DEVICES=0 python unipixel_st_evidence.py --fps 1.0 --model PolyU-ChenLab/UniPixel-3B
+
+Ours:
+    bash ours_st_evidence_multigpu.sh /fsx/home/shijie.wang/code/UniPixel/work_dirs/7b/finetune_1e_sam2_base_plus_videoseg_eccv_merged_v2 8 0
+
+
+Evaluation:
+    python eval_st_evidence.py \
+        --pred_file results/gemini/gemini_2_5_flash_st_evidence_single_1fps.json \
+        --eval_masks \
+        --pred_mask_dir results/gemini/gemini_2_5_flash_st_evidence_single_1fps/concat \
+        --num_workers 32
