@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Evidence-Backed Video Question Answering">
+  <meta name="keywords" content="video understanding, video question answering, vqa, evidence-backed vqa">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Evidence-Backed Video Question Answering</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./prj_static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+  
+            <h1 class="title is-3 publication-title">
+              Evidence-Backed Video Question Answering <br>
+            </h1>
+  
+            <!-- Authors -->
+            <div class="is-size-5 publication-authors">
+              <div class="author-row">
+                <span class="author-block"><a href="https://wang-sj16.github.io/">Shijie Wang<sup>1,2*</sup></a></span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block"><a href="https://sites.google.com/view/hongluzhou/">Honglu Zhou<sup>1</sup></a></span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block"><a href="https://ziyangw2000.github.io/">Ziyang Wang<sup>1*</sup></a></span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block"><a href="https://xurantju.github.io/">Ran Xu<sup>1</sup></a></span>
+              </div>
+  
+              <div class="author-row">
+                <span class="author-block"><a href="http://cmxiong.com/">Caiming Xiong<sup>1</sup></a></span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block"><a href="https://www.salesforce.com/blog/author/silvio-savarese/">Silvio Savarese<sup>1</sup></a></span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block"><a href="https://chensun.me/index.html">Chen Sun<sup>2</sup></a></span>&nbsp;&nbsp;&nbsp;
+                <span class="author-block"><a href="https://www.niebles.net/">Juan Carlos Niebles<sup>1</sup></a></span>
+              </div>
+            </div>
+  
+            <!-- Affiliations -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Salesforce AI Research</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>2</sup>Brown University</span>
+            </div>
+  
+            <!-- Note -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">*: Work done during internship at Salesforce</span>
+            </div>
+  
+            <!-- Links -->
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://github.com/SalesforceAIResearch/EVQA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/Salesforce/ST-Evidence-Bench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Benchmark (ST-Evidence-Bench)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/Salesforce/ST-Evidence-Instruct"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>SFT Dataset (ST-Evidence-Instruct)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/Salesforce/ST-Evidence-3B"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Model 3B (ST-Evidence-3B)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/Salesforce/ST-Evidence-7B"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Model 7B (ST-Evidence-7B)</span>
+                </a>
+              </span>
+
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Motivation</h2>
+          <center>
+            <img src="./images/teaser.png" style="max-width: 70%; height: auto;">
+          </center>
+          <br>
+          <div class="content has-text-justified" style="margin: auto; width: 100%;">
+            Current Video Large Language Models (Video LLMs) excel in question answering (QA) but largely operate as black boxes, providing textual answers without verifiable visual grounding. Existing explainability efforts rely on textual rationales or sparse bounding boxes, which struggle to capture complex video dynamics such as occlusions and nonrigid deformations. We propose Evidence-Backed Video Question Answering (E-VQA), a novel task requiring models to jointly output a semantic answer and precise spatio-temporal evidence: temporal segments and dense, tracked object segmentation masklets. To support this, we introduce ST-Evidence, the first human-verified benchmark for both discriminative and generative pixel-level grounding. Evaluations of state-of-the-art models reveal a critical decoupling between QA accuracy and true visual perception that scaling alone fails to bridge. To address this, we develop scalable, automated generation pipelines to create ST-Evidence-Instruct, a 160k-scale dataset bridging high-level reasoning with fine-grained grounding. Fine-tuning grounded Video LLMs on this data yields substantial gains (e.g., +26.6 t-mean and +7.7 J &F on a 7B model), establishing a robust baseline for explainable, evidence-backed video understanding.
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+<br>
+<br>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{wang2026evidence,
+      title={Evidence-Backed Video Question Answering},
+      author={Wang, Shijie and Zhou, Honglu and Wang, Ziyang and Xu, Ran and Xiong, Caiming and Savarese, Silvio and Sun, Chen and Niebles, Juan Carlos},
+      booktitle={European Conference on Computer Vision (ECCV)},
+      year={2026}
+    }
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align:right;font-size:small;">
+          <a href="https://github.com/nerfies/nerfies.github.io">
+            This guy makes a nice webpage.
+          </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
